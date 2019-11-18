@@ -1,27 +1,34 @@
-# AngularTodo
+# TodoV3
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.17.
+  Todo App was generated with Angular CLI version 8.3.17
 
-## Development server
+## Author
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+  Name: Duy Thien Tran
 
-## Code scaffolding
+  Phone number: 07 88 95 84 86
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  Email: duythientran1998@gmail.com
 
-## Build
+  Website: www.tranduythien.net
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Idea
 
-## Running unit tests
+  https://www.lucidchart.com/invitations/accept/41bea750-6e5c-4693-a908-f892cb3c21cb
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Usage
 
-## Running end-to-end tests
+  1. Clone project:`git clone https://github.com/mariohandsome/angular-todo.git`
+  2. Install library project: `npm i`
+  3. Start project: `npm start`
+  4. Build project: `npm build`
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Support
 
-## Further help
+  [N] Mr Thien
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  [P] 07 88 95 84 86
+
+  [W] www.tranduythien.net
+
+  [E] duythientran1998@gmail.com
