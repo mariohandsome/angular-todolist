@@ -22,12 +22,10 @@
 
 
 html, body {
+  height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 14px;
   color: #333;
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   margin: 0;
 }
 
@@ -58,4 +56,8 @@ a:hover {
 
 a:hover {
   color: #125699;
+}
+
+.container {
+  width: auto;
 }
