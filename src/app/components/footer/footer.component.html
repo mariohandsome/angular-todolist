@@ -1,1 +1,26 @@
-<p>footer works!</p>
+<div class="row my-2">
+  <div class="col-6">
+    <div class="d-flex align-items-center">
+      <input type="checkbox"> Check All
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="text-right">{{ length }} item{{ length > 0 ? 's' : '' }} left</div>
+  </div>
+</div>
+
+<div class="row my-2">
+  <div class="col-9">
+    <nav>
+      <button class="mr-2"
+        *ngFor="let btn of filterButtons"
+        [ngClass]="{ 'active': btn.isActive }"
+      >{{ btn.label }}</button>
+    </nav>
+  </div>
+  <div class="col-3">
+    <div class="text-right">
+      <button>Clean</button>
+    </div>
+  </div>
+</div>

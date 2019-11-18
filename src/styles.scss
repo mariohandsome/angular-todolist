@@ -31,3 +31,28 @@ a:hover {
 a:hover {
   color: #125699;
 }
+
+input {
+  width: calc(100% - 4px - 1rem);
+  padding: .3rem .5rem;
+  border-radius: 6px;
+  outline: none;
+  &[type="checkbox"] {
+    width: 1rem;
+  }
+}
+
+button {
+  min-width: 2.2rem;
+  border-radius: 6px;
+  background: #1976d2;
+  padding: .3rem;
+  outline: rgba(white, 0) !important;
+  border-color: rgba(white, 0);
+  color: white;
+  transition: ease-in-out .3s;
+
+  &:hover {
+    background: darken($color: #1976d2, $amount: 10);
+  }
+}

@@ -34,10 +34,11 @@ svg#clouds {
 
 // Todo app
 .wrapper {
-  margin: 2rem 0;
-  padding: 4rem 15px;
-  padding-top: 2rem;
   background: rgba(white, .7);
   box-shadow: 1px 1px 6px #c1c1c1;
   border-radius: 6px;
+  max-width: 500px;
+  margin: 2rem auto;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
