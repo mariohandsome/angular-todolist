@@ -1,26 +1,20 @@
+<hr class="mt-4">
 <div class="row my-2">
-  <div class="col-6">
-    <div class="d-flex align-items-center">
-      <input type="checkbox" class="mr-2"> Check All
-    </div>
+  <div class="col-6 d-flex align-items-center">
+    <input type="checkbox" class="mr-2"> Check All
   </div>
-  <div class="col-6">
-    <div class="text-right">{{ length }} item{{ length > 0 ? 's' : '' }} left</div>
+  <div class="col-6 text-right">
+    <span>{{ length }} item{{ length > 0 ? 's' : '' }} left</span>
   </div>
 </div>
 
-<div class="row my-2">
-  <div class="col-9">
-    <nav>
-      <button class="mr-2"
-        *ngFor="let btn of filterButtons"
-        [ngClass]="{ 'active': btn.isActive }"
-      >{{ btn.label }}</button>
-    </nav>
-  </div>
-  <div class="col-3">
-    <div class="text-right">
-      <button>Clean</button>
-    </div>
-  </div>
+<div class="d-flex justify-content-between align-items-center my-2">
+  <nav>
+    <button class="mr-2"
+    *ngFor="let btn of filterButtons"
+    [ngClass]="{ 'active': btn.isActive }"
+  >{{ btn.label }}</button>
+  </nav>
+
+  <button>Clean</button>
 </div>
