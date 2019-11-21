@@ -1,9 +1,16 @@
 .todo-item {
   padding: .3rem 0;
   border-radius: 6px;
+  position: relative;
+
+  label {
+    margin: 0;
+    width: 100%;
+    cursor: pointer;
+  }
 
   &.active {
-    background: darken($color: #ffffff, $amount: 10);
+    // background: darken($color: #ffffff, $amount: 10);
   }
 
   i {
@@ -22,4 +29,14 @@
     }
   }
 
+  .edit-form {
+    position: absolute;
+    width: 87%;
+    left: 2.3rem;
+    top: 0;
+
+    input {
+      width: 100%;
+    }
+  }
 }

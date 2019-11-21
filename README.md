@@ -1,4 +1,4 @@
-# TodoV3
+# Todo Local Storage Browser
 
   Todo App was generated with Angular CLI version 8.3.17
 

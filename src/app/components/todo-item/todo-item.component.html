@@ -5,23 +5,39 @@
   [ngClass]="{ active: isHovered }"
 >
   <div class="col-9 d-flex align-items-center">
-    <input type="checkbox" class="mr-2">
-    <span>Todo items</span>
+    <input
+      type="checkbox"
+      class="mr-2"
+      [id]="todo.id"
+      [checked]="todo.isCompleted"
+      (change)="changeTodoStatus()"
+    >
+    <label
+      [for]="todo.id"
+    >
+      {{todo.content}}
+    </label>
   </div>
 
   <div class="col-3 d-flex align-items-center justify-content-end">
 
-    <i class="eva eva-edit-outline text-primary mr-2"
+    <i
+      class="eva eva-edit-outline text-primary mr-2"
       [ngClass]="{ active: isHovered }"
       (click)="isEditing = true"
+      [hidden]="todo.isCompleted"
     ></i>
 
     <i class="eva eva-close text-danger"
       [ngClass]="{ active: isHovered }"
     ></i>
-
-    <form *ngIf="isEditing">
-      <input type="text" name="editTodo">
-    </form>
   </div>
+
+  <form
+    class="edit-form"
+    *ngIf="isEditing"
+    (keyup)="submitEdit($event)"
+  >
+    <input type="text" name="editTodo" [(ngModel)]="todo.content">
+  </form>
 </div>

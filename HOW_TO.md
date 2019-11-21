@@ -19,10 +19,11 @@
     * `models`: Generate a javascript models that expose the properties declared
       * `filtering.model.ts`: export `interface` FilterButton. And export `enum` Filter
       * `todo.model.ts`: export `class` Todo
-    * `services`: Connect `components` no have relationship
-                  (Ex: can using metadata from component to orther components,...)
-      * `local-storage.service.ts`
-      * `todo.service.ts`
+    * `services`: Connect components no have relationship
+      * `local-storage.service.ts`:
+      Provided `Class LocalStorageService` methods to work with local storage in browers
+      * `todo.service.ts`:
+      Provided `Class TodosService` methods, properties, filters to work with components and local storage.
   * `assets`
   * `environments`
 * `.editorconfig`

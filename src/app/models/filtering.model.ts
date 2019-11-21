@@ -1,11 +1,11 @@
 export interface FilterButton {
   type: Filter;
   label: string;
-  isActive: boolean;
+  active: boolean;
 }
 
 export enum Filter {
   All,
-  isActive,
+  Active,
   Completed,
 }

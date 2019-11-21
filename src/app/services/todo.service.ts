@@ -16,36 +16,57 @@ export class TodoService {
   private displayTodosSubject: BehaviorSubject<Todo[]> = new BehaviorSubject<Todo[]>([]);
   private currentFilter: Filter = Filter.All;
 
-  todo$: Observable<Todo[]> = this.displayTodosSubject.asObservable();
+  todos$: Observable<Todo[]> = this.displayTodosSubject.asObservable();
   length$: Observable<number> = this.lengthSubject.asObservable();
 
   constructor(private storageService: LocalStorageService) { }
 
   fetchFromLocalStorage() {
     this.todos = this.storageService.getValue<Todo[]>(TodoService.TodoStorageKey) || [];
-    this.filteredTodos = [...this.todos.map(todo => ({...todo}))];
+    this.filteredTodos = [...this.todos];
     this.updateTodosData();
   }
 
   updateToLocalStorage() {
     this.storageService.setObject(TodoService.TodoStorageKey, this.todos);
     this.filterTodos(this.currentFilter, false);
-    this.displayTodosSubject.next(this.filteredTodos);
-    this.lengthSubject.next(this.todos.length);
+    this.updateTodosData();
+  }
+
+  addTodo(content: string) {
+    const date = new Date(Date.now()).getTime();
+    const newTodo = new Todo(date, content);
+    this.todos.unshift(newTodo);
+    this.updateToLocalStorage();
+  }
+
+  changeTodoStatus(id: number, isCompleted: boolean) {
+    const index = this.todos.findIndex(t => t.id === id);
+    const todo = this.todos[index];
+    todo.isCompleted = isCompleted;
+    this.todos.splice(index, 1, todo);
+    this.updateToLocalStorage();
+  }
+
+  editTodo(id: number, content: string) {
+    const index = this.todos.findIndex(t => t.id === id);
+    const todo = this.todos[index];
+    todo.content = content;
+    this.todos.splice(index, 1, todo);
+    this.updateToLocalStorage();
   }
 
   filterTodos(filter: Filter, isFiltering: boolean = true) {
     this.currentFilter = filter;
     switch (filter) {
-      case Filter.isActive:
+      case Filter.Active:
         this.filteredTodos = this.todos.filter(todo => !todo.isCompleted);
         break;
-
       case Filter.Completed:
         this.filteredTodos = this.todos.filter(todo => todo.isCompleted);
         break;
-      case Filter.Completed:
-        this.filteredTodos = [...this.todos.map(todo => ({...todo}))];
+      case Filter.All:
+        this.filteredTodos = [...this.todos];
         break;
     }
 

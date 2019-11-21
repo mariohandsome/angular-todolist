@@ -38,7 +38,7 @@
 
     <app-header></app-header>
     <app-todo-list></app-todo-list>
-    <app-footer></app-footer>
+    <app-footer *ngIf="hasTodo$ | async"></app-footer>
 
   </div>
 </div>
