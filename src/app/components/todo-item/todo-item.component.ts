@@ -31,6 +31,7 @@ export class TodoItemComponent implements OnInit {
   @Output() deleteTodo: EventEmitter<Todo> = new EventEmitter<Todo>();
 
   isEditing = false;
+  isHovered: boolean;
   constructor() { }
 
   ngOnInit() {
