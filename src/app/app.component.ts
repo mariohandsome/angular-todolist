@@ -16,7 +16,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.todoService.fetchFromLocalStorage();
-    console.log(this.todoService.fetchFromLocalStorage());
     this.hasTodo$ = this.todoService.length$.pipe(map(length => length > 0));
   }
 }

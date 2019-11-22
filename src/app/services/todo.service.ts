@@ -56,6 +56,27 @@ export class TodoService {
     this.updateToLocalStorage();
   }
 
+  deleteTodo(id: number) {
+    const index = this.todos.findIndex(t => t.id === id);
+    this.todos.splice(index, 1);
+    this.updateToLocalStorage();
+  }
+
+  toggleAll() {
+    this.todos = this.todos.map(todo => {
+      return {
+        ...todo,
+        isCompleted: !this.todos.every(t => t.isCompleted)
+      };
+    });
+    this.updateToLocalStorage();
+  }
+
+  clearCompleted() {
+    this.todos = this.todos.filter(todo => !todo.isCompleted);
+    this.updateToLocalStorage();
+  }
+
   filterTodos(filter: Filter, isFiltering: boolean = true) {
     this.currentFilter = filter;
     switch (filter) {

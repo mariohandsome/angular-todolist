@@ -24,4 +24,8 @@ export class TodoListComponent implements OnInit {
   onEditTodo(todo: Todo) {
     this.todoService.editTodo(todo.id, todo.content);
   }
+
+  onDeleteTodo(todo: Todo) {
+    this.todoService.deleteTodo(todo.id);
+  }
 }

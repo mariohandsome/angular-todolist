@@ -7,12 +7,14 @@
   <div class="col-9 d-flex align-items-center">
     <input
       type="checkbox"
-      class="mr-2"
       [id]="todo.id"
+      [ngClass]="{ checked: todo.isCompleted }"
+      class="mr-2"
       [checked]="todo.isCompleted"
       (change)="changeTodoStatus()"
     >
     <label
+      [@fadeStrikeThroughAnimation]="todo.isCompleted ? 'completed' : 'active'"
       [for]="todo.id"
     >
       {{todo.content}}
@@ -30,6 +32,7 @@
 
     <i class="eva eva-close text-danger"
       [ngClass]="{ active: isHovered }"
+      (click)="removeTodo()"
     ></i>
   </div>
 
